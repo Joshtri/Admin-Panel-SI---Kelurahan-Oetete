@@ -1,5 +1,3 @@
-
-
 //call the express function & also create mysql function.
 const express = require("express");
 const mysql = require("mysql");
@@ -9,7 +7,7 @@ const app = express();
 
 //untuk memberitahu template engine ada di views.
 app.set("view engine", "ejs");
-app.set("views", "views");
+app.set("views", "views");//to retelling our data in folder views.
 
 const db = mysql.createConnection({
    host: "127.0.0.1",
