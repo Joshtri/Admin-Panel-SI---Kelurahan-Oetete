@@ -51,7 +51,35 @@ router.get('/data-umkm', function(req, res, next) {
   res.render('data-umkm');
 });
 
+// GET data-kbli
+// router.get('/sidebar', function(req, res, next) {
+//   res.render('sidebar');
+// });
 
+
+// GET tambah penduduk.
+router.get('/tambah-data-penduduk', function(req, res, next) {
+  res.render('tambah-data-penduduk');
+});
+
+// GET tambah kematian.
+router.get('/tambah-data-kematian', function(req, res, next) {
+  res.render('tambah-data-kematian');
+});
+router.get('/tambah-data-pindah', function(req, res, next) {
+  res.render('tambah-data-pindah');
+});
+
+router.get('/tambah-data-keluarga', function(req, res, next) {
+  res.render('tambah-data-keluarga');
+});
+
+router.get('/tambah-data-kelahiran', function(req, res, next) {
+  res.render('tambah-data-kelahiran');
+});
+router.get('/tambah-data-masuk', function(req, res, next) {
+  res.render('tambah-data-masuk');
+});
 
 
 
@@ -62,8 +90,16 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
+router.get('/statistik-umur', function(req,res,next){
+  res.render('statistik-umur');
+});
 
+router.get('/statistik-pekerjaan', function(req,res,next){
+  res.render('statistik-pekerjaan');
+});
 
-
+router.get('/statistik-pekerjaan', function(req,res,next){
+  res.render('statistik-pekerjaan');
+});
 
 module.exports = router;
