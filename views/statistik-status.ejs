@@ -40,11 +40,11 @@
             <%- include('sidebar'); -%>
                 <!-- header end   -->
                 <div class="col-md-10 p-5 pt-5">
-                    <h3><i class="fa-solid fa-building-un"></i>&nbsp&nbspSTATISTIK PEKERJAAN</h3>
+                    <h3><i class="fa-sharp fa-solid fa-people"></i>&nbsp&nbspSTATISTIK STATUS</h3>
                     <hr>
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-primary" type="button"><i class="fa-solid fa-chart-column"></i>&nbspUbah
+                        <button class="btn btn-primary" type="button" onclick="switchType();"><i class="fa-solid fa-chart-column"></i>&nbspUbah
                             grafik</button>
                     </div>
                     <div class="container-fluid " style="width:400px ;">
@@ -63,7 +63,6 @@
                                 <th scope="col" class="text-center">NIK</th>
                                 <th scope="col" class="text-center">Alasan</th>
                                 <th scope="col" class="text-center">Aksi</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -75,12 +74,9 @@
                                 <td scope="row" class="text-center">Edinburgh</td>
                                 <td scope="row" class="text-center">Edinburgh</td>
                                 <td scope="row" class="text-center">
-                                    <i class="fa-solid fa-users-rectangle bg-primary p-2 text-white rounded"
-                                        data-toggle="tooltip" title="Detail"></i>
-                                    <i class="fa-solid fa-pen-to-square bg-success p-2 text-white rounded"
-                                        data-toggle="tooltip" title="Edit"></i>
-                                    <i class="fa-solid fa-trash-can bg-danger p-2 text-white rounded"
-                                        data-toggle="tooltip" title="Delete"></i>
+                                    <i class="fa-solid fa-users-rectangle bg-primary p-2 text-white rounded"data-toggle="tooltip" title="Detail"></i>
+                                    <i class="fa-solid fa-pen-to-square bg-success p-2 text-white rounded"data-toggle="tooltip" title="Edit"></i>
+                                    <i class="fa-solid fa-trash-can bg-danger p-2 text-white rounded"data-toggle="tooltip" title="Delete"></i>
                                 </td>
 
 
@@ -130,7 +126,7 @@
                                 plugins: {
                                     title: {
                                         display: true,
-                                        text: 'Grafik Pekerjaan'
+                                        text: 'Grafik Status'
                                     }
                                 }
                             },

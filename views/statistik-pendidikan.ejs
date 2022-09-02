@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Statistik Status</title>
+    <title>Statistik Pendidikan</title>
 
 </head>
 
@@ -40,7 +40,7 @@
             <%- include('sidebar'); -%>
                 <!-- header end   -->
                 <div class="col-md-10 p-5 pt-5">
-                    <h3><i class="fa-solid fa-building-un"></i>&nbsp&nbspSTATISTIK PEKERJAAN</h3>
+                    <h3><i class="fa-solid fa-graduation-cap"></i>&nbsp&nbspSTATISTIK PENDIDIKAN</h3>
                     <hr>
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -103,7 +103,7 @@
                     </script>
 
                     <script>
-                        const labels = ["Sudah Menikah", "Belum Menikah", "Jomblo", "Jomblo Ngenes"];
+                        const labels = ["Laki-Laki", "Perempuan"];
 
                         const data = {
                             labels: labels,
@@ -114,10 +114,9 @@
                                         "rgb(255, 99, 132)",
                                         "rgb(54, 162, 235)",
                                         "rgb(255, 205, 86)",
-                                        "rgb(255, 25, 86)"
                                     ],
 
-                                    data: [2, 10,50,20],
+                                    data: [2, 10],
                                     hoverOffset: 4,
                                 },
                             ],
@@ -130,7 +129,7 @@
                                 plugins: {
                                     title: {
                                         display: true,
-                                        text: 'Grafik Pekerjaan'
+                                        text: 'Grafik Pendidikan'
                                     }
                                 }
                             },
