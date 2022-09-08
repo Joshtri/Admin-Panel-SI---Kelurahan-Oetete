@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Statistik Pendidikan</title>
 
 </head>
@@ -48,7 +49,7 @@
                             grafik</button>
                     </div>
                     <div class="container-fluid " style="width:400px ;">
-                        <canvas id="myChart"></canvas>
+                        <canvas id="Pendidikan-Chart"></canvas>
                     </div>
 
                     <!-- First Row -->
@@ -57,36 +58,95 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="text-center">No</th>
-                                <th scope="col" class="text-center">Id Pindah</th>
-                                <th scope="col" class="text-center">Nomor KK</th>
-                                <th scope="col" class="text-center">Tanggal Pindah</th>
-                                <th scope="col" class="text-center">NIK</th>
-                                <th scope="col" class="text-center">Alasan</th>
-                                <th scope="col" class="text-center">Aksi</th>
+                                <th scope="col" class="text-center">Kelompok</th>
+                                <th scope="col" class="text-center">Laki-Laki</th>
+                                <th scope="col" class="text-center">Perempuan</th>
+                                <th scope="col" class="text-center">Jumlah</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td scope="row" class="text-center">1</td>
-                                <td scope="row" class="text-center">Tiger</td>
-                                <td scope="row" class="text-center">Nixon</td>
-                                <td scope="row" class="text-center">System Architect</td>
-                                <td scope="row" class="text-center">Edinburgh</td>
-                                <td scope="row" class="text-center">Edinburgh</td>
-                                <td scope="row" class="text-center">
-                                    <i class="fa-solid fa-users-rectangle bg-primary p-2 text-white rounded"
-                                        data-toggle="tooltip" title="Detail"></i>
-                                    <i class="fa-solid fa-pen-to-square bg-success p-2 text-white rounded"
-                                        data-toggle="tooltip" title="Edit"></i>
-                                    <i class="fa-solid fa-trash-can bg-danger p-2 text-white rounded"
-                                        data-toggle="tooltip" title="Delete"></i>
-                                </td>
+                                <td scope="row" class="text-center">Tamat SD/Sederajat</td>
+                                <td scope="row" class="text-center">2</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">5</td>
+                         
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-center">2</td>
+                                <td scope="row" class="text-center">Tidak/Belum Sekolah</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">5</td>
+                                <td scope="row" class="text-center">8</td>
+                            </tr>
 
-
+                            <tr>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">SLTA/Sederajat</td>
+                                <td scope="row" class="text-center">5</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">8</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-center">4</td>
+                                <td scope="row" class="text-center">SLTP/ Sederajat</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">6</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-center">5</td>
+                                <td scope="row" class="text-center">Belum Tamat SD/Sederajat</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">2</td>
+                                <td scope="row" class="text-center">5</td>
+                            </tr> 
+                            <tr>
+                                <td scope="row" class="text-center">6</td>
+                                <td scope="row" class="text-center">Diploma IV/Strata I</td>
+                                <td scope="row" class="text-center">1</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">4</td>
+                            </tr>
+                            <tr>    
+                                <td scope="row" class="text-center">7</td>
+                                <td scope="row" class="text-center">Diploma I/II Akademik</td>
+                                <td scope="row" class="text-center">5</td>
+                                <td scope="row" class="text-center">5</td>
+                                <td scope="row" class="text-center">10</td>
+                            </tr> 
+                            <tr>    
+                                <td scope="row" class="text-center">8</td>
+                                <td scope="row" class="text-center">Diploma III/S. Muda</td>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">1</td>
+                                <td scope="row" class="text-center">4</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-center">9</td>
+                                <td scope="row" class="text-center">Strata II</td>
+                                <td scope="row" class="text-center">2</td>
+                                <td scope="row" class="text-center">2</td>
+                                <td scope="row" class="text-center">4</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-center">10</td>      
+                                <td scope="row" class="text-center">Strata III</td>
+                                <td scope="row" class="text-center">2</td>
+                                <td scope="row" class="text-center">1</td>
+                                <td scope="row" class="text-center">3</td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="card bg-light ms-md-auto mt-4 border-4 " style="width: 10rem; height: 8rem;">
+                        <div class="card-body">
+                          <div class="card-body-icon" style="position: absolute; z-index: 0; top: 25px; right: 4px; opacity:0.4 ; font-size: 60px;"><img src="https://img.icons8.com/ios-filled/50/000000/sigma.png"/></div>
+                          <h6 class="card-title" style="font-size: 15px ;">TOTAL KESELURUHAN</h6>
+                          <div class="display-4" style="font-weight:bold ; font-size:50px ;">2</div>
+                        </div>
+                    </div>  
                 </div>
 
                 <!-- footer start -->
@@ -96,14 +156,16 @@
                         $(document).ready(function () {
                             $('#dtHorizontalVerticalExample').DataTable({
                                 "scrollX": true,
-                                "scrollY": 200,
+                                "scrollY": 500,
                             });
                             $('.dataTables_length').addClass('bs-select');
                         });
                     </script>
 
                     <script>
-                        const labels = ["Laki-Laki", "Perempuan"];
+                        const labels = ["Belum/Tidak Pernah Sekolah", "Belum/Tidak Tamat SD/SDLB/MI/Paket A", "SD/SDLB/MI/Paket A",
+                                        "SMP/SMPLB/MTs/Paket B", "SMA/SMLB/MA/SMK/MAK/Paket C", "DI/DII/DIII",
+                                        "DIV/S1","S2", "S3"];
 
                         const data = {
                             labels: labels,
@@ -113,10 +175,17 @@
                                     backgroundColor: [
                                         "rgb(255, 99, 132)",
                                         "rgb(54, 162, 235)",
-                                        "rgb(255, 205, 86)",
+                                        "rgb(25, 34, 86)",
+                                        "rgb(255, 99, 132)",
+                                        "rgb(54, 16, 235)",
+                                        "rgb(115, 25, 86)",
+                                        "rgb(0, 99, 132)",
+                                        "rgb(534, 162, 235)",
+                                        "rgb(211, 15, 56)",
+                                        "rgb(211, 200, 56)",
                                     ],
 
-                                    data: [2, 10],
+                                    data: [2, 10,3,5,6,7,8,5,2,2],
                                     hoverOffset: 4,
                                 },
                             ],
@@ -135,7 +204,12 @@
                             },
                         };
 
-                        const myChart = new Chart(document.getElementById("myChart"), config);
+                        const myChart = new Chart(document.getElementById("Pendidikan-Chart"), config);
+                        axios.get('/statistik/statistik/pendidikan').then(e => {
+                            console.log(e);
+                            myChart.data.datasets[0].data = e.data.data;
+                            myChart.update();
+                        });
 
                     </script>
 

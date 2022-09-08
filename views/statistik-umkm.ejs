@@ -17,7 +17,8 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Statistik Status</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Statistik Jenis Kelamin</title>
 
 </head>
 
@@ -40,15 +41,15 @@
             <%- include('sidebar'); -%>
                 <!-- header end   -->
                 <div class="col-md-10 p-5 pt-5">
-                    <h3><i class="fa-sharp fa-solid fa-people"></i>&nbsp&nbspSTATISTIK STATUS</h3>
+                    <h3><i class="fa-solid fa-shop"></i>&nbsp&nbspSTATISTIK UMKM</h3>
                     <hr>
-
+                   
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-primary" type="button"><i class="fa-solid fa-chart-column"></i>&nbspUbah
                             grafik</button>
                     </div>
                     <div class="container-fluid " style="width:400px ;">
-                        <canvas id="myChart"></canvas>
+                        <canvas id="Usaha-Mikro-Chart"></canvas>
                     </div>
 
                     <!-- First Row -->
@@ -57,32 +58,30 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="text-center">No</th>
-                                <th scope="col" class="text-center">Id Pindah</th>
-                                <th scope="col" class="text-center">Nomor KK</th>
-                                <th scope="col" class="text-center">Tanggal Pindah</th>
-                                <th scope="col" class="text-center">NIK</th>
-                                <th scope="col" class="text-center">Alasan</th>
-                                <th scope="col" class="text-center">Aksi</th>
+                                <th scope="col" class="text-center">Laki-Laki</th>
+                                <th scope="col" class="text-center">Perempuan</th>
+                                <th scope="col" class="text-center">Jumlah</th>
+          
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td scope="row" class="text-center">1</td>
-                                <td scope="row" class="text-center">Tiger</td>
-                                <td scope="row" class="text-center">Nixon</td>
-                                <td scope="row" class="text-center">System Architect</td>
-                                <td scope="row" class="text-center">Edinburgh</td>
-                                <td scope="row" class="text-center">Edinburgh</td>
-                                <td scope="row" class="text-center">
-                                    <i class="fa-solid fa-users-rectangle bg-primary p-2 text-white rounded"data-toggle="tooltip" title="Detail"></i>
-                                    <i class="fa-solid fa-pen-to-square bg-success p-2 text-white rounded"data-toggle="tooltip" title="Edit"></i>
-                                    <i class="fa-solid fa-trash-can bg-danger p-2 text-white rounded"data-toggle="tooltip" title="Delete"></i>
-                                </td>
-
-
-                            </tr>
+                                <td scope="row" class="text-center">3</td>
+                                <td scope="row" class="text-center">4</td>
+                                <td scope="row" class="text-center">7</td>
+                               
+                            </tr>                        
                         </tbody>
+                        
                     </table>
+                    <div class="card bg-light ms-md-auto mt-4 border-4 " style="width: 10rem; height: 8rem;">
+                        <div class="card-body">
+                          <div class="card-body-icon" style="position: absolute; z-index: 0; top: 25px; right: 4px; opacity:0.4 ; font-size: 60px;"><img src="https://img.icons8.com/ios-filled/50/000000/sigma.png"/></div>
+                          <h6 class="card-title" style="font-size: 15px ;">TOTAL KESELURUHAN</h6>
+                          <div class="display-4" style="font-weight:bold ; font-size:50px ;">2</div>
+                        </div>
+                    </div>  
                 </div>
 
                 <!-- footer start -->
@@ -99,7 +98,7 @@
                     </script>
 
                     <script>
-                        const labels = ["Sudah Menikah", "Belum Menikah", "Jomblo", "Jomblo Ngenes"];
+                        const labels = ["Usaha Mikro","Usaha Menengah","Usaha Kecil"];
 
                         const data = {
                             labels: labels,
@@ -109,30 +108,34 @@
                                     backgroundColor: [
                                         "rgb(255, 99, 132)",
                                         "rgb(54, 162, 235)",
-                                        "rgb(255, 205, 86)",
-                                        "rgb(255, 25, 86)"
+                                        "rgb(255, 205, 86)",   
                                     ],
 
-                                    data: [2, 10,50,20],
+                                    data: [0,0,0],
                                     hoverOffset: 4,
                                 },
                             ],
                         };
 
                         const config = {
-                            type: "pie",
+                            type: "bar",
                             data: data,
                             options: {
                                 plugins: {
                                     title: {
                                         display: true,
-                                        text: 'Grafik Status'
+                                        text: 'Grafik Kategori Usaha'
                                     }
                                 }
                             },
                         };
 
-                        const myChart = new Chart(document.getElementById("myChart"), config);
+                        const myChart = new Chart(document.getElementById("Usaha-Mikro-Chart"), config);
+                        axios.get('/statistik/statistik/umkm').then(e => {
+                            console.log(e);
+                            myChart.data.datasets[0].data = e.data.data;
+                            myChart.update();
+                        });
 
                     </script>
 

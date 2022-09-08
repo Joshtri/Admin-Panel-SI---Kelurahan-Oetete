@@ -26,18 +26,18 @@
         <form>
             <div class="form-label">
             <label>Nomor KK</label>
-            <input type="text" name="" class="form-control" placeholder="Masukkan Nomor KK Anda">
+            <input type="text" name="" class="form-control" placeholder="Masukkan Nomor KK">
             </div>
 
-            <div class="form-label">
+            <!-- <div class="form-label">
             <label>Nama Kepala keluarga</label>
             <input type="text" name="" class="form-control" placeholder="Masukkan NIK Anda">
-            </div>
+            </div> -->
 
-            <div class="form-label mb-3">
+            <!-- <div class="form-label mb-3">
                 <label>Nomor KK</label>
                 <input type="text" name="" class="form-control" placeholder="Masukkan Nomor KK Anda">
-            </div>
+            </div> -->
             
             <div class="row">
                 <div class="col-md-6">
@@ -64,21 +64,21 @@
             
             <div class="form-label">
                 <label>Kecamatan</label>
-                <input type="text" name="" class="form-control" placeholder="Masukkan Kelurahan">
+                <input type="text" name="" class="form-control" placeholder="Masukkan Kecamatan">
             </div>
-            <div class="form-label">
+            <!-- <div class="form-label">
                 <label>Nama Jalan</label>
                 <input type="text" name="" class="form-control" placeholder="Masukkan Nama Jalan">
-            </div>
+            </div> -->
             
             <div class="form-label">
                 <label>Kota/Kabupaten</label>
-                <input type="text" name="" class="form-control" placeholder="Masukkan Kelurahan">
+                <input type="text" name="" class="form-control" placeholder="Masukkan Kota/Kabupaten">
             </div>
-            <div class="form-label">
+            <!-- <div class="form-label">
                 <label>Kelurahan</label>
                 <input type="text" name="" class="form-control" placeholder="Masukkan Kelurahan">
-            </div>  
+            </div>   -->
 
             <div class="form-label">
                 <label>Provinsi</label>
@@ -87,7 +87,7 @@
 
             
 
-            <a href=""><button type="submit" class="btn btn-primary">SIMPAN</button></a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">SIMPAN</button>
             <a href=""><button type="reset" class="btn btn-danger">RESET</button></a>
             <a href="/data/data-keluarga"><button type="button" class="btn btn-warning">KEMBALI</button></a>
 
@@ -96,6 +96,24 @@
       </div>
 
 
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Memastikan Data</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            Apakah anda sudah memastikan inputan data benar?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+            <button type="button" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+        </div>
     </div>
 
     

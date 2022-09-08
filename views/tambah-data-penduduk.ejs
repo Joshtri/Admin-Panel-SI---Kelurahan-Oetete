@@ -24,40 +24,38 @@
         <h3><i class="fa-solid fa-users ms-2"></i>&nbsp&nbspTAMBAH DATA PENDUDUK</h3><hr>
         
         <form>
+            <div class="form-label mb-3">
+                <label>Nomor KK</label>
+                <input type="text" name="" class="form-control" placeholder="Masukkan Nomor KK Anda">
+            </div>
+            
+            <div class="form-label">
+            <label>NIK</label>
+            <input type="text" name="" class="form-control" placeholder="Masukkan NIK Anda">
+            </div>
+            
             <div class="form-label">
             <label>Nama</label>
             <input type="text" name="" class="form-control" placeholder="Masukkan Nama Anda">
             </div>
 
-            <div class="form-label">
-            <label>NIK</label>
-            <input type="text" name="" class="form-control" placeholder="Masukkan NIK Anda">
-            </div>
 
-            <div class="form-label mb-3">
-                <label>Nomor KK</label>
-                <input type="text" name="" class="form-control" placeholder="Masukkan Nomor KK Anda">
-            </div>
 
-            <div class="form-label">
-            <label>Pilih Jenis Kelamin</label>
-                <select class="form-control">
-                    <option value="">-</option>
-                    <option value="">Pria</option>
-                    <option value="">Wanita</option>
-                </select>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-label">
+                    <label>Pilih Jenis Kelamin</label>
+                        <select class="form-control">
+                            <option value="">-</option>
+                            <option value="">Laki-Laki</option>
+                            <option value="">Perempuan</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
             
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-label">
-                    <label>Tempat Lahir</label>
-                    <input type="text" name="" class="form-control" placeholder="Masukkan Tempat Lahir Anda">
-                    </div>
-                </div>
-            
-
                 <div class="col-md-6">
                   <div class="form-label">
                         <label>Tanggal Lahir</label>
@@ -66,51 +64,56 @@
                 </div>
             </div>
             
-            <div class="form-label">
-                <label>Pendidikan</label>
-                    <select class="form-control">
-                        <option value="">-</option>
-                        <option value="">Swasta</option>
-                        <option value="">Negeri</option>
-                    </select>
-    
-            </div>
-            <div class="form-label">
-                <label>Jenis Pekerjaan</label>
-                    <select class="form-control">
-                        <option value="">-</option>
-                        <option value="">Swasta</option>
-                        <option value="">Negeri</option>
-                    </select>
-    
-            </div>
-            <div class="form-label">
-                <label>Pendapatan</label>
-                    <select class="form-control">
-                        <option value="">-</option>
-                        <option value="">Swasta</option>
-                        <option value="">Negeri</option>
-                    </select>
-    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-label">
+                        <label>Pendidikan</label>
+                            <select class="form-control">
+                                <option value="">-</option>
+                                <option value="">Belum/Tidak Pernah Sekolah</option>
+                                <option value="">Belum/Tidak Tamat SD/SDLB/MI/Paket A</option>
+                                <option value="">SD/SDLB/MI/Paket A</option>
+                                <option value="">SMP/SMPLB/MTs/Paket B</option>
+                                <option value="">SMA/SMLB/MA/SMK/MAK/paket C</option>
+                                <option value="">DI/DII/DII</option>
+                                <option value="">DIV/S1</option>
+                                <option value="">S2</option>
+                                <option value="">S3</option>
+                               
+                            </select>
+                    </div>
+                 </div>
             </div>
 
-            <div class="form-label">
-                <label>Status</label>
-                    <select class="form-control">
-                        <option value="">-</option>
-                        <option value="">Belum Menikah</option>
-                        <option value="">Sudah Menikah</option>
-                    </select>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-label">
+                        <label>Pekerjaan</label>
+                            <select class="form-control">
+                                <option value="">-</option>
+                                <option value="">Swasta</option>
+                                <option value="">Negeri</option>
+                            </select>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-label">
-                <label>Kewarganegaraan</label>
-                <input type="text" name="" class="form-control" placeholder="Masukkan Kewarganegaraan">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-label">
+                        <label>Status Perkawanin</label>
+                            <select class="form-control">
+                                <option value="">-</option>
+                                <option value="">Belum Menikah</option>
+                                <option value="">Sudah Menikah</option>
+                                <option value="">Cerai Hidup</option>
+                                <option value="">Cerai Mati</option>
+                            </select>
+                    </div>
+                </div>
             </div>
-
             
-
-            <a href=""><button type="submit" class="btn btn-primary">SIMPAN</button></a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">SIMPAN</button>
             <a href=""><button type="reset" class="btn btn-danger">RESET</button></a>
             <a href="/data/data-penduduk"><button type="button" class="btn btn-warning">KEMBALI</button></a>
 
@@ -119,6 +122,25 @@
       </div>
 
 
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Memastikan Data</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            Apakah anda sudah memastikan inputan data benar?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+            <button type="button" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+        </div>
     </div>
 
     
